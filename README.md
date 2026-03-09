@@ -32,7 +32,11 @@ Intuitively, we can state that potential field $V=V(r)$ created due to presence 
 So the laplacian of V can be rewritten as, 
 $\nabla^{2} V = \frac{1}{r^2}\frac{\partial^2}{\partial r^2}\big( r^2 \frac{\partial \rho}{\partial r}\big)  = 4 \pi G \rho(r)$
 
-
+We have came across various parametrizations like for an ellipse 
+$x = a \cos \theta, \qquad y = b \sin \theta$, here we introduce a parametrization of the form 
+$\rho(r) = \rho_{c} \theta(r)^{n}$, where $\rho_{c}$ is the central density and $\theta(r)$ is a dimensionless variable, which we are interested in. 
+Note: $\mathrm{log}_e \rho(r) = \mathrm{log}_e \rho_{c} + n\mathrm{log}_e \theta(r)$
+Density at any point can be related to the central density 
 
 
 
