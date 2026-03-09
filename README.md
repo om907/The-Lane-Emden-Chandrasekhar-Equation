@@ -30,7 +30,7 @@ $\mathrm{d}M= \int \rho \mathrm{d}V$.
 Intuitively, we can state that potential field $V=V(r)$ created due to presence of mass is also strictly related to radial distance. This is because of gravitational field $\vec{g} = \vec{g} (r)$. 
 
 So the laplacian of V can be rewritten as, 
-$\nabla^{2} V = \frac{1}{r^2}\frac{\partial^2}{\partial r^2}\big( r^2 \frac{\partial \rho}{\partial r}\big)  = 4 \pi G \rho(r)$
+$\nabla^{2} V = \frac{1}{r^2}\frac{\partial}{\partial r}\big( r^2 \frac{\partial V}{\partial r}\big)  = 4 \pi G \rho(r)$
 
 We have came across various parametrizations like for an ellipse 
 $x = a \cos \theta, \qquad y = b \sin \theta$, here we introduce a parametrization of the form 
