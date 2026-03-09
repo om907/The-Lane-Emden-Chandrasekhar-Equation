@@ -37,8 +37,8 @@ Let suppose body is a **_star_** and it is in **_hydrostatic equilibrium_**, thi
 ③ $\frac{\mathrm{d}P}{\mathrm{d}r} = -\frac{G M(r) \rho (r)}{r^2}$.
 
 
-This allows us to rewrite the hydrostatic equilibrium equation as, 
-$\frac{\mathrm{d}V}{\mathrm{d}r} = - \frac{1}{\rho(r)} \frac{\mathrm{d}P}{\mathrm{d}r}$
+This allows us to rewrite the hydrostatic equilibrium equation as 
+$\frac{\mathrm{d}V}{\mathrm{d}r} = - \frac{1}{\rho(r)} \frac{\mathrm{d}P}{\mathrm{d}r}$.
 
 
 Here we introduce a **_parametrization of density profile_** of the form 
