@@ -14,7 +14,7 @@ The gravitational Gauss law states that $\textit{The gravitational flux through 
 Differential form is $\vec{\nabla}\cdot \vec{g} = - 4 \pi G \rho$.
 Integral form is $\iint \vec{g}\cdot \vec{\mathrm{d}A} =-4 \pi G M_{enc}$.
 
-Suppose in an empty space I add a source. A source is a aggregate body of mass localised in a finite volume. Newton tells us the source will create a gravitational potential field around the source $\displaystyle \propto -\frac{1}{r}$. This is _considered_ a conservative field, that itself creates a force field around the source given by $\vec{F}=-\nabla V$. The force field is also given by $\vec{F}=m\vec{g}=\vec{g}$, (assume m=1).
+Suppose in an empty space I add a source. A source is a aggregate body of mass localised in a finite volume. Newton tells us the source will create a gravitational potential field around the source $\displaystyle \propto -\frac{1}{r}$. This is considered a **_conservative field_**, that itself creates a force field around the source given by $\vec{F}=-\nabla V$. The force field is also given by $\vec{F}=m\vec{g}=\vec{g}$, (assume m=1).
 
 <!-- If we are allowed write some vector as a gradient of a scalar then $\vec{\nabla} × \vec{g}=0$. -->
 
@@ -36,8 +36,10 @@ So the laplacian of V can be rewritten as,
 Let suppose body is a **_star_** and it is in **_hydrostatic equilibrium_**, this means that the star at each point is in _inertial equilibrium_ (_assumes perfect balance_) between the two forces: 1. star expansion due to nuclear reaction (represented by the part $\frac{\mathrm{d}P}{\mathrm{d}r}$), 2. contraction due to increase in gravitational field as nuclear reactions happen, mass is increased in endproduct resulting in increased gravitational field (represented by RHS). The equation is given by
 ③ $\frac{\mathrm{d}P}{\mathrm{d}r} = -\frac{G M(r) \rho (r)}{r^2}$.
 
+This allows us to rewrite the hydrostatic equilibrium equation as, 
+$\frac{\mathrm{d}\\rho}{\mathrm{d}r} = - \frac{1}{\rho(r)} \frac{\mathrm{d}P}{\mathrm{d}r}$
 Here we introduce a **_parametrization of density profile_** of the form 
-$\rho(r) = \rho_{c} \theta(r)^{n}$, where $\rho_{c}$ is the central density, $n$ is the polytropic index of ideal gas gas equation and  $\theta(r)$ is a dimensionless variable, which we are interested in. 
+$\rho(r) = \rho_{c} \theta(r)^{n}$, where $\rho_{c}$ is the central density, $n$ is the polytropic index of ideal gas equation and $\theta(r)$ is a dimensionless variable, which we are interested in. 
 
 Note: a general solution of $\rho(r)$ to the parital differential equation will be of the form 
 $\rho(r) = C_{1} e^{C_{2} r^C_{3}}$. 
