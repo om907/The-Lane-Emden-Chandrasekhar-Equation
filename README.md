@@ -34,14 +34,13 @@ $\nabla^{2} V = \frac{1}{r^2}\frac{\partial^2}{\partial r^2}\big( r^2 \frac{\par
 
 We have came across various parametrizations like for an ellipse 
 $x = a \cos \theta, \qquad y = b \sin \theta$, here we introduce a parametrization of the form 
-$\rho(r) = \rho_{c} \theta(r)^{n}$, where $\rho_{c}$ is the central density and $\theta(r)$ is a dimensionless variable, which we are interested in. 
-Note: $\mathrm{log_e} \rho(r) = \mathrm{log_e} \rho_{c} + n\mathrm{log_e}\theta(r)$
-Density at any point can be related to the central density 
-
-
-
-
-
+$\rho(r) = \rho_{c} \theta(r)^{n}$, where $\rho_{c}$ is the central density, $n$ is the polytropic index of ideal gas gas equation and  $\theta(r)$ is a dimensionless variable, which we are interested in. 
+Note: a general solution of $\rho(r)$ to the parital differential equation will be of the form 
+$\rho(r) = C_{1} e^{C_{2} r^C_{3}}$.
+To include $\rho_{c}$ and polytropic index $n$, the solution is modified into
+$\rho(r) = \rho_{c} e^{-\mathrm{log_e} C_{1}} 
+$\mathrm{log_e} \rho(r) = \mathrm{log_e} \rho_{c} + n\mathrm{log_e}\theta(r)$.
+Density at any point can be related to the central density by this new function. Now they could have related 
 
 
 
