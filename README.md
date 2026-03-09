@@ -26,8 +26,8 @@ The laplacian of f(x,y) is divergence of a gradient of f(x,y). The gradient of f
 Now, suppose the shape of the massive object in 3 dimensional space is **_spherically symmetric_**. The polar angle and azimuthal angle components are a constant. We primarily consider the density profile of the object given by 
 $\rho = \rho (r)$.
 The density profile is strictly related to radial distance. The mass profile of the object is given by
-$ \mathrm{d}M= \int \rho \mathrm{d}V$. 
-Intuitively, we can state that potential field $V=V(r)$ created due to presence of mass is also strictly related to radial distance. This is because 
+$\mathrm{d}M= \int \rho \mathrm{d}V$. 
+Intuitively, we can state that potential field $V=V(r)$ created due to presence of mass is also strictly related to radial distance. This is because $\vec{g} = \vec{g} (r)$ 
 
 
 
