@@ -229,7 +229,7 @@ The values of $\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}$;
 
 We _assumed_ hydrostatic equilibrium, which is essentially a competition between the forces due to pressure expansion and gravitational contraction. 
 To compare these forces, we take their ratios and study that (just like we define reynold's number for comparing inertial and viscous forces for understanding turbulence in flow). 
-We define $\beta(r) = \big|\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}\big| + 1$. 
+We define $\beta(r) = \left|\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}\right| + 1$. 
 
 The values of $\beta$;
 ![Diagram](./beta.png)
