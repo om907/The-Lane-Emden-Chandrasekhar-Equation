@@ -84,69 +84,112 @@ $\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial\theta}{\partial
 ⑥ $r = a \xi$
 
 where
-$a^2 =\frac{(n+1)K\rho_c^{\frac{1}{n}-1}}{4\pi G}$. Note that $[a]=[L]$ so $a$ is a length dimension constant. From this point onward, we work in terms of the dimensionless radial coordinate $\xi$ defined by $\xi=\frac{r}{a}$ which represents the scaled version of the physical radius $r$. The logic of doing this lies in extreme simplication of the equation.
+$a^2 =\frac{(n+1)K\rho_c^{\frac{1}{n}-1}}{4\pi G}$. Note that $[a]=[L]$ so $a$ is a length dimension constant. We work in terms of the dimensionless radial coordinate $\xi$ defined by $\xi=\frac{r}{a}$ which represents the scaled version of the physical radius $r$. The logic of doing this lies in extreme simplication of the equation.
 
 After substitution and simplification we obtain the our equation,
 | Lane Emden Equation |
 |---------------------|
 | $$\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0$$ |
 
-```MathematicaClear[LaneEmdenSolve]
+```Mathematica
 Clear[LaneEmdenSolve]
 
-LaneEmdenSolve[n_, xmax_ : 10, rhoC_ : 1, K_ : 1, G_ : 1] :=
+LaneEmdenSolve[n_, \[Xi]max_ : 10, rhoC_ : 1, K_ : 1, G_ : 1, C_ : 1] :=
  Module[
-  {eps = 10^-10, sol, a, theta, rho, r, p, mass, delP, deltheta, 
-   delrho, g, B, ratio, T},
+  {eps = 10^-10,
+   sol,
+   a,
+   theta, deltheta,
+   r, rmax,
+   rho, delrho,
+   P, delP,
+   m,
+   g,
+   rat, arat,
+   B,
+   T, delT,
+   \[Sigma], \[CapitalPhi], L,
+   kb, ma, mu
+   },
+  
   sol =
    NDSolve[{
       \[Theta]''[\[Xi]] + (2/\[Xi]) \[Theta]'[\[Xi]] + \
 \[Theta][\[Xi]]^n == 0,
       \[Theta][eps] == 1 - eps^2/6,
       \[Theta]'[eps] == -eps/3
-      }, \[Theta], {\[Xi], eps, xmax}, MaxStepSize -> 0.05][[1]];
+      }, \[Theta], {\[Xi], eps, \[Xi]max}, MaxStepSize -> 0.05][[1]];
   
-  a = Sqrt[(K (n + 1) rhoC^(1/(n + eps) - 1))/(4 Pi G)];
+  a = If[
+    n == 0, Sqrt[K /(4 Pi G rhoC)](*constant-density sphere*),
+    Sqrt[(K (n + 1) rhoC^(1/n - 1))/(4 Pi G)]
+    ];
   
   theta[\[Xi]_] := Evaluate[\[Theta][\[Xi]] /. sol];
   deltheta[\[Xi]_] := theta'[\[Xi]];
-  
   r[\[Xi]_] := a \[Xi];
-  rho[\[Xi]_] := rhoC theta[\[Xi]]^n;
-  delrho[\[Xi]_] := rho'[\[Xi]];
+  rmax = a \[Xi]max;
+
+  (* xi = r/a *)
+  rho[r_] := rhoC theta[r/a]^n;
+  delrho[r_] := (rhoC n/a) theta[r/a]^(n - 1) deltheta[r/a];
   
-  (*Solve mass equation*)
-  mass =
+  (*mass equation*)
+  m =
    NDSolveValue[{
-     M'[\[Xi]] == 4*Pi*a^3*\[Xi]^2*rho[\[Xi]],
+     M'[r] == 4 Pi a^3 (r/a)^2 rho[r],
      M[0] == 0
-     }, M, {\[Xi], 0, xmax}];
+     }, M, {r, 0, rmax}];
   
   (*Hydrostatic equilibrium*)
-  p[\[Xi]_] := K*rho[\[Xi]]^(1 + 1/(n + eps));
-  delP[\[Xi]_] := p'[\[Xi]];
+  P[r_] := If[
+    n == 0, K*rho[r],
+    K*rho[r]^(1 + 1/n)
+    ];
+  delP[r_] := P'[r];
   
-  (*g(\[Xi])*)
-  g[\[Xi]_] := (G mass[\[Xi]])/(a^2 \[Xi]^2);
-  B[\[Xi]_] := Abs[delP[\[Xi]]/(rho[\[Xi]] g[\[Xi]] )] + 1;
-  ratio[\[Xi]_] := (\[Xi]^2 deltheta[\[Xi]])/mass[\[Xi]];
-  T[\[Xi]_] := p[\[Xi]] 4/3 \[Pi] a^3 \[Xi]^3;
+  (*g(r)*)
+  g[r_] := (G m[r])/r^2 ;
+  
+  (* ratio functions *)
+  rat[r_] := Abs[delP[r]]/(rho[r] g[r] );
+  B[r_] := Abs[delP[r]]/(rho[r] g[r] ) + 1;
+  
+  (*T curve and Eddington Emden Chandrasekhar Equation *)
+  kb = 1;
+  ma = 1;
+  mu = 1;
+  T[r_] := (kb ma)/mu  P[r] /rho[r];
+  delT[r_] := T'[r];
+
+  \[Sigma] = 1; (*stefan bolzmann constant \[Sigma] *)
+
+  (*Flux*)
+  \[CapitalPhi][r_] := -((delT[r] 4 \[Sigma] (T[r])^3)/(C rho[r]));   (*some constant C *)
+
+  (*Luminosity*)
+  L[r_] := \[CapitalPhi][r]/(4 Pi r^2);
+  
   <|
-   "n" -> n,
-   "Solution" -> sol,
-   "Theta" -> theta,
-   "Rho" -> rho,
-   "r" -> r, "a" -> a,
-   "Mass" -> mass,
-   "Pressure" -> p,
-   "dPd\[Xi]" -> delP,
+   "n" -> n, "Solution" -> sol, "Theta" -> theta, "a" -> a,
+   "r" -> r, "rmax" -> rmax,
+   "Rho" -> rho, "Mass" -> m,
+   "P" -> P, "dP" -> delP,
    "g" -> g,
+   "r1" -> rat,
    "B" -> B,
-   "arat" -> ratio,
-   "T" -> T
+   "T" -> T,
+   "F" -> \[CapitalPhi],(*Flux*)
+   "L" -> L
    |>]
    ```
 
-Numerical solving involves using NDSolve where you first write your equation and boundary conditions. the boundary conditions are derived from solutions of n = 0.Instead of evaluating at 0, we evaluate at $eps=10^-10$. This approximation is done to avoid issues like ComplexInfinity solutions. Analytical boundary conditions are $\theta(0)=1$ and $\theta'(0)=0$. Thus numerical boundary conditions are slightly modified version of analytical boundary conditions. 
+We solve the equations in radial coordinate $r$ because everything is representable in $r$ not in $\xi$.
 
-To avoid ComplexInfinity, I have modified $a$ and $P$
+Numerical solving involves using NDSolve where you first write your equation and boundary conditions. The boundary conditions are derived from solutions of n = 0. Instead of evaluating at 0, we evaluate at $eps=10^-10$. This approximation is done to avoid issues like ComplexInfinity solutions. Analytical boundary conditions are $\theta(0)=1$ and $\theta'(0)=0$. Thus numerical boundary conditions are slightly modified version of analytical boundary conditions. 
+
+To avoid ComplexInfinity, I have modified $a$ and $P$ also. 
+
+For $n$ integer values ranging from 0 to 6, $\theta(\xi)$ is shown below;
+
+
