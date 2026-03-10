@@ -90,3 +90,4 @@ After substitution and simplification we obtain the Lane Emden equation,
 
 $\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0$
 
+[okay]
