@@ -55,9 +55,31 @@ Here we introduce a **_parametrization of density profile_** of the form
 
 Introducing ④ and ⑤ to the laplacian of $V$ we do the following steps to achieve the lane - emden equation. 
 $\frac{1}{r^2}\frac{\partial}{\partial r}\big( \frac{r^2}{\rho} \frac{\partial P}{\partial r}\big)  = -4 \pi G \rho(r)$
-$\begin{equation}
-P = K\rho_c^{1+\frac{1}{n}}\theta^{n+1}
-\end{equation}$
 
+$P = K\rho_c^{1+\frac{1}{n}}\theta^{n+1}$
 
+First compute the pressure derivative
+$\frac{\partial P}{\partial r} = K\rho_c^{1+\frac{1}{n}}(n+1)\theta^n \frac{\partial\theta}{\partial r}$
+
+Now divide by $\rho$
+$\frac{1}{\rho}\frac{\partial P}{\partial r}=\frac{K\rho_c^{1+\frac{1}{n}}(n+1)\theta^n}{\rho_c\theta^n}\frac{\partial\theta}{\partial r}=K(n+1)\rho_c^{\frac{1}{n}}\frac{\partial\theta}{\partial r}$
+
+Substitute into the main equation
+$\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 K(n+1)\rho_c^{\frac{1}{n}}\frac{\partial\theta}{\partial r}\right)=-4\pi G\rho_c\theta^n$
+
+Since the constant factors can be taken outside,
+$K(n+1)\rho_c^{\frac{1}{n}}\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial\theta}{\partial r}\right)=-4\pi G\rho_c\theta^n$
+
+Divide by $K(n+1)\rho_c^{1/n}$
+$\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial\theta}{\partial r}\right)=-\frac{4\pi G\rho_c}{K(n+1)\rho_c^{1/n}}\theta^n$
+
+Introduce the dimensionless variable
+$r = a \xi$
+
+where
+$a^2 =\frac{(n+1)K\rho_c^{\frac{1}{n}-1}}{4\pi G}$
+
+After substitution and simplification we obtain the \textbf{Lane Emden equation}
+
+$\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)=-\theta^n$
 
