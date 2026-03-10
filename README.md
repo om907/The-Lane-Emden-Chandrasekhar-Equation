@@ -216,7 +216,7 @@ Note: Because we _considered_ hydrostatic equilibrium, which is essentially comp
 To compare these forces, we take their ratios and study that (just like we define reynold's number for comparing inertial and viscous forces for understanding turbulence in flow). 
 We define $\beta(r) = |\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}| + 1$. 
 
-The values of $\frac{\partial P}{\parital r} (r)$;
+The values of $\frac{\partial P}{\partial r} (r)$;
 ![Diagram](./pressurederivative.png)
 
 The values of $|\frac{\partial P}{\parital r} (r)|$;
