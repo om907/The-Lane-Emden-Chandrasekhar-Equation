@@ -214,12 +214,12 @@ The values of $pressure(r)$;
 
 Note: Because we _considered_ hydrostatic equilibrium, which is essentially competition between the forces due to pressure expansion and gravitational contraction. 
 To compare these forces, we take their ratios and study that (just like we define reynold's number for comparing inertial and viscous forces for understanding turbulence in flow). 
-We define $\beta(r) = |\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}| + 1$. 
+We define $\beta(r) = \big|\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}\big| + 1$. 
 
 The values of $\frac{\partial P}{\partial r} (r)$;
 ![Diagram](./pressurederivative.png)
 
-The values of $|\frac{\partial P}{\parital r} (r)|$;
+The values of $|\frac{\partial P}{\partial r} (r)|$;
 ![Diagram](./absolutepressurederivative.png)
 
 The values of $g(r)$;
@@ -227,6 +227,9 @@ The values of $g(r)$;
 
 The values of $\rho(r) g(r)$;
 ![Diagram](./productrhogravitationalfield.png)
+
+The values of $\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}$;
+![Diagram](./ratio.png)
 
 The values of $\beta$;
 ![Diagram](./beta.png)
