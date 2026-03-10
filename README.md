@@ -90,6 +90,62 @@ After substitution and simplification we obtain the our equation,
 | Lane Emden Equation |
 |---------------------|
 | $$\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0$$ |
-```python
-print("hello")
-```
+
+```Mathematica
+Clear[LaneEmdenSolve]
+
+LaneEmdenSolve[n_, xmax_ : 10, rhoC_ : 1, K_ : 1, G_ : 1] :=
+ Module[
+  {eps = 10^-10, sol, a, thetaFun, rhoFun, rFun, pFun, massSol, delP, 
+   deltheta, delrho, g, B, arat, T},
+  sol =
+   NDSolve[{
+      \[Theta]''[\[Xi]] + (2/\[Xi]) \[Theta]'[\[Xi]] + \
+\[Theta][\[Xi]]^n == 0,
+      \[Theta][eps] == 1 - eps^2/6,
+      \[Theta]'[eps] == -eps/3
+      }, \[Theta], {\[Xi], eps, xmax}, MaxStepSize -> 0.05][[1]];
+  
+  a = Sqrt[(K (n + 1) rhoC^(1/(n + eps) - 1))/(4 Pi G)];
+  
+  thetaFun[\[Xi]_] := Evaluate[\[Theta][\[Xi]] /. sol];
+  deltheta[\[Xi]_] := thetaFun'[\[Xi]];
+  
+  rFun[\[Xi]_] := a \[Xi];
+  rhoFun[\[Xi]_] := rhoC thetaFun[\[Xi]]^n;
+  delrho[\[Xi]_] := rhoFun'[\[Xi]];
+  
+  (*rhoC n thetaFun[\[Xi]]^(n-1) deltheta[\[Xi]];*)
+  
+  (*Solve mass equation*)
+  massSol =
+   NDSolveValue[{
+     M'[\[Xi]] == 4*Pi*a^3*\[Xi]^2*rhoFun[\[Xi]],
+     M[0] == 0
+     }, M, {\[Xi], 0, xmax}];
+  
+  (*Hydrostatic equilibrium*)
+  pFun[\[Xi]_] := K*rhoFun[\[Xi]]^(1 + 1/(n + eps));
+  delP[\[Xi]_] := pFun'[\[Xi]];
+  (*K(1+1/n)rhoFun[\[Xi]]^(1/n)delrho[\[Xi]];*)
+  
+  (*g(\[Xi])*)
+  g[\[Xi]_] := (G massSol[\[Xi]])/(a^2 \[Xi]^2);
+  B[\[Xi]_] := Abs[delP[\[Xi]]/(rhoFun[\[Xi]] g[\[Xi]] )] + 1;
+  arat[\[Xi]_] := (\[Xi]^2 deltheta[\[Xi]])/massSol[\[Xi]];
+  T[\[Xi]_] := pFun[\[Xi]] 4/3 \[Pi] a^3 \[Xi]^3;
+  <|
+   "n" -> n,
+   "Solution" -> sol,
+   "Theta" -> thetaFun,
+   "Rho" -> rhoFun,
+   "r" -> rFun, "a" -> a,
+   "Mass" -> massSol,
+   "Pressure" -> pFun,
+   "dPd\[Xi]" -> delP,
+   "g" -> g,
+   "B" -> B,
+   "arat" -> arat,
+   "T" -> T
+   |>]
+   ```
