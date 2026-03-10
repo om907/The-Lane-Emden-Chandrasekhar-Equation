@@ -84,7 +84,7 @@ Introduce the dimensionless variable $\xi$ such that
 $r = a \xi$
 
 where
-$a^2 =\frac{(n+1)K\rho_c^{\frac{1}{n}-1}}{4\pi G}$. Note that $[a]=[L]$. So $a$ is a length dimension constant. Now onwards we operate in the in a scaled basis $\xi$ { it is equivalent to $\frac{r}{a}$  
+$a^2 =\frac{(n+1)K\rho_c^{\frac{1}{n}-1}}{4\pi G}$. Note that $[a]=[L]$. So $a$ is a length dimension constant. Now onwards we operate in the in a scaled axis $\xi$ which is equivalent to $\frac{r}{a}$. 
 
 After substitution and simplification we obtain the $\textbf{Lane Emden equation}$
 
