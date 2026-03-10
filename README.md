@@ -31,7 +31,7 @@ Intuitively, we can state that potential field $V=V(r)$ created due to presence 
 So the laplacian of V can be rewritten as, 
 ② $\nabla^{2} V = \frac{1}{r^2}\frac{\partial}{\partial r}\big( r^2 \frac{\partial V}{\partial r}\big)  = 4 \pi G \rho(r)$
 
-<!--  ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ -->
+<!--    ⑥ ⑦ ⑧ ⑨ ⑩ -->
 
 Let suppose body is a **_star_** and it is in **_hydrostatic equilibrium_**, this means that the star at each point is in _inertial equilibrium_ (_assumes perfect balance_) between the two forces: 1. star expansion due to nuclear reaction, 2. contraction due to increase in gravitational field as nuclear reactions happen, mass is increased in endproduct resulting in increased gravitational field. The equation is given by $F = \frac{\mathrm{d}P}{\mathrm{d}r}\mathrm{d}r\mathrm{d}A = -\frac{G M(r) \rho (r)}{r^2}\mathrm{d}r\mathrm{d}A$.
 
@@ -43,13 +43,16 @@ $\frac{\partial V}{\partial r} = - \frac{1}{\rho} \frac{\partial P}{\partial r}$
 
 Therefore, one can write the laplacian of $V$ (Eq.②) as simple combination of mass profile equation and hydrostatic equilibrium.  
 
+Now we use the **_ideal gas polytropic equation_** which states that for any polytropic index $n$, the ideal gas equation is 
+$P V^{1+\frac{1}{n}}=\text{constant}$.
+$V = \frac{M}{\rho}}$ implies that 
+④ $P =K \rho^{1+\frac{1}{n}}$ where $K$ is a dimensional constant. 
+This equation can be understood by understanding $n$, that is when $n=0$ process is isothermal, $n=\gamma-1$ process is adiabatic. 
+
 Here we introduce a **_parametrization of density profile_** of the form 
-$\rho(r) = \rho_{c} \theta(r)^{n}$, where $\rho_{c}$ is the central density, $n$ is the polytropic index of ideal gas equation and $\theta(r)$ is a dimensionless variable, which we are interested in. 
+⑤ $\rho(r) = \rho_{c} \theta(r)^{n}$ where $\rho_{c}$ is the central density, $n$ is the polytropic index of ideal gas equation and $\theta(r)$ is a dimensionless variable, which we are interested in. Density at any point can be related to the central density by this new function. The essence of this equation lies in $n$, which connects the density profile to polytropic ideal gas equation. 
 
-$\mathrm{log_e} \rho(r) = \mathrm{log_e} \rho_{c} + n\mathrm{log_e}\theta(r)$. 
-Density at any point can be related to the central density by this new function. The essence of this equation lies in $n$, which connects the density profile to polytropic ideal gas equation. 
-
-
+Introducing ④ and ⑤ to the laplacian of $V$ gives the following steps to achieve the lane - emden equation. 
 
 
 
