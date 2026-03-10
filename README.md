@@ -26,7 +26,7 @@ The density profile is strictly related to radial distance. The mass profile of 
 Intuitively, we can state that potential field $V=V(r)$ created due to presence of mass is also strictly related to radial distance. This is because of gravitational field $\vec{g} = \vec{g} (r)$. 
 
 So the Laplacian of V can be rewritten as, 
-② $\nabla^{2} V = \frac{1}{r^2}\frac{\partial}{\partial r}\big( r^2 \frac{\partial V}{\partial r}\big)  = 4 \pi G \rho(r)$
+② $\nabla^{2} V = \frac{1}{r^2}\frac{\partial}{\partial r}\big( r^2 \frac{\partial V}{\partial r}\big)  = 4 \pi G \rho(r)$.
 
 <!-- ⑦ ⑧ ⑨ ⑩ -->
 
