@@ -201,7 +201,7 @@ The values of $r(\xi)$;
 ![Diagram](./r.png)
 
 Now we shift to r-axis for understanding the further plots;
-Note that you cannot achieve $\frac{\partial \rho}{\partial \xi}$, so you have to shift back to physical radial coordinate. 
+Note that you cannot achieve $g(\xi)$, so you have to shift back to physical radial coordinate. 
 
 The values of $\rho(r)$;
 ![Diagram](./rho.png)
