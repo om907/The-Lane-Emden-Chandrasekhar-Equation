@@ -47,7 +47,7 @@ Now we use the **_ideal gas polytropic equation_** which states that for any pol
 $P V^{1+\frac{1}{n}}=\text{constant}$.
 $V = \frac{M}{\rho}$ implies that 
 ④ $P =K \rho^{1+\frac{1}{n}}$ where $K$ is a dimensional constant. 
-This equation can be understood by understanding $n$, that is when $n=0$ process is isothermal, $n=\gamma-1$ process is adiabatic. 
+This equation can be understood by understanding $n$, that is when $n=0$ process is isothermal, $n=\frac{1}{\gamma-1}$ process is adiabatic. 
 
 Here we introduce a **_parametrization of density profile_** of the form 
 ⑤ $\rho(r) = \rho_{c} \theta(r)^{n}$ where $\rho_{c}$ is the central density, $n$ is the polytropic index of ideal gas equation and $\theta(r)$ is a dimensionless variable, which we are interested in. Density at any point can be related to the central density by this new function. The essence of this equation lies in $n$, which connects the density profile to polytropic ideal gas equation. 
