@@ -92,6 +92,7 @@ After substitution and simplification we obtain the our equation,
 | $$\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0$$ |
 
 ```MathematicaClear[LaneEmdenSolve]
+Clear[LaneEmdenSolve]
 
 LaneEmdenSolve[n_, xmax_ : 10, rhoC_ : 1, K_ : 1, G_ : 1] :=
  Module[
