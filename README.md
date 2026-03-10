@@ -190,6 +190,10 @@ Numerical solving involves using NDSolve where you first write your equation and
 
 To avoid ComplexInfinity, I have modified $a$ and $P$ also. 
 
-For $n$ integer values ranging from 0 to 6, $\theta(\xi)$ is shown below;
+For $n$ integer values ranging from 0 to 6, 
+The plots of Lane Emden Equation is given below
+![$\theta(\xi)$](images/theta.svg)
+
+
 
 
