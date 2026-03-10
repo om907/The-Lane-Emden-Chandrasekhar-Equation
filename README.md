@@ -234,9 +234,25 @@ We define $\beta(r) = \left|\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}\r
 The values of $\beta$;
 ![Diagram](./beta.png)
 
-Now we connect the Lane Emden further to the Eddington Emden Chandrasekhar Equation. 
+Now we connect the Lane Emden further to the Eddington Emden Chandrasekhar Equation which states that, 
 
-$\frac{\mathrm{d} T}{\mathrm{d} r} = -\frac{C \rho(r) \Phi(r)}{4 \sigma T^3}$ where $C$ is a constant of proportionality, we can further substitute $\Phi(r) = \frac{L(r)}{4 \pi r^2}$ to obtain the luminosity relation. 
+For a spherically symmetric massive body, the gravitational flux $\Phi(r)$ passing through a shell (ring shaped) of thickness $\mathrm{d} r$ located at radial distance $r$ from the center of body (origin is at the center of body) is given by 
+$\Phi( r + \mathrm{d}r } - \Phi{r} = - C \rho(r) \Phi_{0}(r) \mathrm{d} r$ where $C$ is a constant of proportionality and $\Phi_{0}(r)$ is the incident flux at radial distance $r$. 
+
+Note : This formula was found by human experience and logic, just coulomb's law is defined. Therefore 
+
+$\Phi( r + \mathrm{d}r } - \Phi{r}  \propto \rho(r)$
+
+$\Phi( r + \mathrm{d}r } - \Phi{r}  \propto \Phi_{0}(r)$
+
+$\Phi( r + \mathrm{d}r } - \Phi{r}  \propto \mathrm{d} r$
+
+By stefan boltzmann law $\Phi(r) = \sigma T(r)^4$ where $\sigma$ is a stefan boltzmann constant and $T(r)$ is temperature profile of the body. 
+
+$\Phi( r + \mathrm{d}r } - \Phi{r} = 4 \sigma T^3 \mathrm{d} T$
+
+
+$\frac{\mathrm{d} T}{\mathrm{d} r} = -\frac{C \rho(r) \Phi_{0}(r)}{4 \sigma T^3}$ where $C$ is a constant of proportionality, we can further substitute $\Phi(r) = \frac{L(r)}{4 \pi r^2}$ to obtain the luminosity relation. 
 The temperature can be obtained from a simple ideal gas equation $P\mu = \rho k_{b} T$. 
 
 The values of $temperature(r)$;
