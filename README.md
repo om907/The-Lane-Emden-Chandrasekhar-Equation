@@ -33,7 +33,7 @@ Now, suppose the shape of the massive object in 3 dimensional space is **_spheri
 </details>
 
 <details>
-<summary><strong>Derivations</strong></summary>
+<summary><strong>Derivation</strong></summary>
 
 We primarily consider the density profile of the object given by 
 $\rho = \rho (r)$.
