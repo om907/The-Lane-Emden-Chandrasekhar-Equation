@@ -262,7 +262,8 @@ We _assumed_ hydrostatic equilibrium, which is essentially a competition between
 To compare these forces, we take their ratios and study that (just like we define reynold's number for comparing inertial and viscous forces for understanding turbulence in flow). 
 We define $\beta(r) = \left|\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}\right| + 1$. The $+ 1$ is considered for a specific reason, $\beta(r) = \rho(r) A(r)$ where $A$ is non-inertial acceleration of the frame. Thus, $\beta$ corresponds to the deviation parameter from the hydrostatic equilibrium where small $\beta$ means less deviation. 
 
-The parameter $\beta(r)=\left|\frac{\dfrac{dP}{dr}}{\rho(r)g(r)}\right|+1$ is introduced as a measure of the deviation from hydrostatic equilibrium. When the pressure gradient exactly balances gravity, $\beta(r)=2.$ If your intended equilibrium value is instead 1, define it as $\beta(r)=\left|\frac{\dfrac{dP}{dr}}{\rho(r)g(r)}+1\right|,$ which satisfies $\beta(r)=0$ for perfect hydrostatic equilibrium. (This latter definition is generally a more natural error measure.)
+<!-- The parameter $\beta(r)=\left|\frac{\dfrac{dP}{dr}}{\rho(r)g(r)}\right|+1$ is introduced as a measure of the deviation from hydrostatic equilibrium.--> 
+When the pressure gradient exactly balances gravity, $\beta(r)=2.$ If your intended equilibrium value is instead 1, define it as $\beta(r)=\left|\frac{\dfrac{dP}{dr}}{\rho(r)g(r)}+1\right|,$ which satisfies $\beta(r)=0$ for perfect hydrostatic equilibrium. (This latter definition is generally a more natural error measure.)
 
 $\beta$ parameter;
 ![Diagram](./figures/beta.png)
