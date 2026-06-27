@@ -1,9 +1,9 @@
 # The Lane Emden Equation
-The Lane Emden Equation was found in 1869 by astrophysicists Jonathan Homer Lane [1] and Robert Emden [2]. The theory of polytropic stellar structure was subsequently placed on a rigorous theoretical foundation by Subrahmanyan Chandrasekhar [3] in his 1939 monograph _An Introduction to the Study of Stellar Structure_. It has enormous applications in field of astrophysics. It is essentially a mixture of various equations combined to give a single equation whose solutions help us derive all important parameters involved to understand the dynamics of a star. To understand this needs elementary knowledge and bit of numerical solving of differential equations. I use Mathematica to solve this equation. My aim is to understand this equation. 
+The Lane Emden Equation was found in 1869 by astrophysicists Jonathan Homer Lane [1] and Robert Emden [2]. The theory of polytropic stellar structure was subsequently placed on a rigorous theoretical foundation by Subrahmanyan Chandrasekhar [3] in his 1939 monograph _An Introduction to the Study of Stellar Structure_. It has enormous applications in field of astrophysics. The Lane–Emden equation is obtained by combining Poisson's equation for gravity, the equation of hydrostatic equilibrium, and a polytropic equation of state. Its solutions provide simple models of self-gravitating gaseous spheres and form one of the foundations of stellar structure theory. To understand this needs elementary knowledge and bit of numerical solving of differential equations. I use Mathematica to solve this equation. My aim is to understand this equation. 
 
 For a non-physics student, reading this README page will help in following manner-
 1. How do we create a model by cumulating many "very basic ideas" in physics. We must start from something right?
-2. Develop a kind of smartness which is to combine many equations into one simple equation. 
+2. Learn how several fundamental physical laws can be combined to construct a mathematical model of a star.
 3. Techniques to solving non-linear differential equations numerically.  
 4. This concept is considered basic in all astrophysics courses.
 
