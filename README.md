@@ -279,15 +279,13 @@ The values of $Luminosity(r)$;
 The essence of combining these equations is that **_for star containing ideal gas, which has spherical symmetry, we can now find for any thermodynamic process (polytropic index $n$), we can find the quantities_** $\rho(r), M(r), P(r), g(r), β, T(r), L(r)$ **_provided the central density_** $\rho_{c}$  **_,the polytropic constant_** $K$ **_,the flux constant_** $C$ **_, and the mean molecular weight_** $\mu$.
 Knowing this, now its just fitting the observed information of stars to this equation's results in different $r$ regions. If we are lucky, there could be some star which is completely expressed by a single lane emden equation. <!--(particular $n, \rho_{c}, K, C, \mu$ value). -->
 
-The experimental data for our Sun is available online. As a mini project, we use our theoretical understanding to model and fit the data provided in [sundata.pdf](./sundata.pdf).
+# Single Polytropic Model of the Sun
 
+This project develops a **single polytropic model of the Sun** based on the work of **Archibald W. Henry** in his paper,
+[*A Polytropic Model of the Sun*](https://doi.org/10.1119/1.17362).
 
-
-
-
-
-
-
+Using the initial parameters and methodology proposed in the paper, we construct a numerical model that reproduces the fundamental physical properties and internal structure of the Sun. The model yields a solar mass of 2.01 × 10³⁰ kg, a central temperature of 1.45 × 10⁷ K, and a dimensionless parameter β of the order of 10⁻⁸. These results are in good agreement with the expected solar parameters, demonstrating the effectiveness of the single-polytrope approximation.
+The results [ssm.pdf](./ssm.pdf) and corresponding codebase [ssm.nb](./ssm.nb)..
 
 
 
