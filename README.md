@@ -32,7 +32,7 @@ Now, suppose the shape of the massive object in 3 dimensional space is **_spheri
 
 </details>
 
-</details>
+<details>
 <summary><strong>Derivations</strong></summary>
 
 We primarily consider the density profile of the object given by 
@@ -105,7 +105,7 @@ After substitution and simplification we obtain the our equation,
 | Lane Emden Equation |
 |---------------------|
 | $$\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2\frac{d\theta}{d\xi}\right)+\theta^n=0$$ |
-<details>
+</details>
  
 <details>
 <summary><strong>Numerical Method</strong></summary>
@@ -210,7 +210,11 @@ Numerical solving involves using NDSolve where you first write your equation and
 
 To avoid ComplexInfinity, I have modified $a$ and $P$ also. 
 
-## Results
+</details>
+
+<details>
+<summary><strong>Results</strong></summary>
+
 For $n$ integer values ranging from 0 to 6, the solutions are displayed below;
 
 The values of a for increasing n integer values from 0 to 6;
@@ -263,7 +267,11 @@ The temperature profile can be obtained from a simple ideal gas equation $P\mu =
 Temperature profile;
 ![Diagram](./T.png)
 
-## Extension of the Lane–Emden Model: Radiative Flux and Luminosity
+</details>
+
+<details>
+<summary><strong>Extension of the Lane–Emden Model: Radiative Flux and Luminosity</strong></summary>
+
 Now we connect the Lane Emden Equation further to the new Eddington Emden Chandrasekhar Equation which states that, 
 
 For a spherically symmetric massive body, the gravitational flux $\Phi(r)$ passing through a shell (ring shaped) of thickness $\mathrm{d} r$ located at radial distance $r$ from the center of body (origin is at the center of body) is given by 
@@ -293,7 +301,7 @@ Luminosity profile;
 
 The essence of combining these equations is that **_for star containing ideal gas, which has spherical symmetry, we can now find for any thermodynamic process (polytropic index $n$), we can find the quantities_** $\rho(r), M(r), P(r), g(r), β, T(r), L(r)$ **_provided the central density_** $\rho_{c}$  **_,the polytropic constant_** $K$ **_,the flux constant_** $C$ **_, and the mean molecular weight_** $\mu$.
 Knowing this, now its just fitting the observed information of stars to this equation's results in different $r$ regions. If we are lucky, there could be some star which is completely expressed by a single lane emden equation. <!--(particular $n, \rho_{c}, K, C, \mu$ value). -->
-<details>
+</details>
 
 <details>
 <summary><strong>Solar Model</strong></summary>
@@ -304,7 +312,7 @@ Using the initial parameters and methodology proposed in the paper, we construct
 This results [ssm.pdf](./ssm.pdf) and the corresponding codebase [ssm.nb](./ssm.nb) is here.
 <details>
 
-<details>
+</details>
 <summary><strong>Summary</strong></summary>
 
 To conclude, I hope you found this project informative and inspiring. Throughout this work, we explored the application of electrostatics, vector calculus, hydrostatic equilibrium, the mass profile equation, and the ideal-gas polytropic equation to develop a simple yet effective model of the Sun.
@@ -312,7 +320,7 @@ To conclude, I hope you found this project informative and inspiring. Throughout
 By introducing suitable dimensionless variables, we simplified the governing equations into a single differential equation. We then implemented the model in Mathematica, fitted the appropriate parameters, and successfully reproduced key solar properties, including the solar mass and central temperature.
 I am leaving this project here in the hope that it may be useful to others. If you build upon this work, improve the model, or extend it further, I would be delighted to hear about your results and learn from your contributions.
 
-<details>
+</details>
 
  
 <details>
