@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="figures/banner.png" width="100%">
+</p>
+
 # The Lane Emden Equation
 ![Wolfram Language](https://img.shields.io/badge/Wolfram-Language-DD1100?logo=wolfram&logoColor=white)
 ![Astrophysics](https://img.shields.io/badge/Field-Astrophysics-blue)
