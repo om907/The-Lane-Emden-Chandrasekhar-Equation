@@ -14,13 +14,13 @@ We will derive the Lane Emden Equation, and in that manner get to know the assum
 <!--Whatever is stated in this webpage is checked multiple times and 100% legit information. Even then, there are possibilities of mistake is being made, so please mention on my [email](mailto:omshah0405@gmail.com) so that I can rectify them.-->
 Possible corrections can be mailed to me at my [email](mailto:omshah0405@gmail.com).
 
-Let us begin understanding the Lane Emden Chandrasekhar Equation.
-<details>
-<summary><strong>Assumptions</strong></summary>
-
+Let us begin understanding the Lane Emden Chandrasekhar Equation. 
 The gravitational Gauss law states that $\textit{The gravitational flux through any closed surface is proportional to the enclosed mass.}$
 Differential form is $\vec{\nabla}\cdot \vec{g} = - 4 \pi G \rho$.
 Integral form is $\iint \vec{g}\cdot \vec{\mathrm{d}A} =-4 \pi G M_{enc}$.
+
+<details>
+<summary><strong>##Assumptions</strong></summary>
 
 Suppose in an empty space I add a source. A source is a aggregate body of mass localised in a finite volume. Newton tells us the source will create a gravitational potential field around the source $\displaystyle \propto -\frac{1}{r}$. This is considered a **_conservative field_**, that itself creates a force field around the source given by $\vec{F}=-\nabla V$. The force field is also given by $\vec{F}=m\vec{g}=\vec{g}$, (assume m=1).
 
@@ -31,7 +31,9 @@ The Laplacian of f(x,y) is divergence of a gradient of f(x,y). The gradient of f
 Now, suppose the shape of the massive object in 3 dimensional space is **_spherically symmetric_**. The polar angle and azimuthal angle components are a constant. 
 
 </details>
-## Derivation
+
+<details>
+<summary><strong>##Derivations</strong></summary>
 
 We primarily consider the density profile of the object given by 
 $\rho = \rho (r)$.
