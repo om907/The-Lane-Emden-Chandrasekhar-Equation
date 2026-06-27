@@ -15,8 +15,8 @@ We will derive the Lane Emden Equation, and in that manner get to know the assum
 Possible corrections can be mailed to me at my [email](mailto:omshah0405@gmail.com).
 
 Let us begin understanding the Lane Emden Chandrasekhar Equation.
-
-## Assumptions
+<details>
+<summary><strong>Assumptions</strong></summary>
 
 The gravitational Gauss law states that $\textit{The gravitational flux through any closed surface is proportional to the enclosed mass.}$
 Differential form is $\vec{\nabla}\cdot \vec{g} = - 4 \pi G \rho$.
@@ -30,6 +30,7 @@ The Laplacian of f(x,y) is divergence of a gradient of f(x,y). The gradient of f
 
 Now, suppose the shape of the massive object in 3 dimensional space is **_spherically symmetric_**. The polar angle and azimuthal angle components are a constant. 
 
+</details>
 ## Derivation
 
 We primarily consider the density profile of the object given by 
