@@ -217,41 +217,62 @@ To avoid ComplexInfinity, I have modified $a$ and $P$ also.
 
 For $n$ integer values ranging from 0 to 6, the solutions are displayed below;
 
-The values of a for increasing n integer values from 0 to 6;
+The values of $a$ for increasing $n$ integer values from 0 to 6; As $n$ increases, the scaling length generally changes because the equation of state becomes softer, altering the radial extent associated with one unit of the dimensionless coordinate.
 ![Diagram](./figures/a.png)
 
-The values of rmax for increasing n integer values from 0 to 6;
+The values of $r_max$ for increasing $n$ integer values from 0 to 6; The quantity $r_max =a ξ_max$ represents the physical radius of the numerical solution. Since it depends directly on the scaling length $a$, its value changes with the polytropic index. This illustrates how the characteristic size of the stellar model varies for different polytropic equations of state.
 ![Diagram](./figures/rmax.png)
 
-The values of $\theta(\xi)$;
+The values of $\theta(\xi)$; The function  $\theta(\xi)$ describes the normalized density distribution inside the star. Larger values of n produce solutions that decrease more gradually near the center, indicating greater central concentration of matter.
 ![Diagram](./figures/theta.png)
 
-The values of $r(\xi)$;
+The values of $r(\xi)$; The dimensionless coordinate is converted back to the physical radius using r=aξ. This transformation allows all physical quantities such as density, pressure, and mass to be expressed in SI units
 ![Diagram](./figures/r.png)
 
 Now we shift to r-axis for understanding the further plots;
 Note that you cannot achieve $M(\xi)$, so you have to shift back to physical radial coordinate. 
 
-Density profile;
+Density profile; The density profile is obtained from $\rho(r)=\rho_c,\theta(r)^n.$ Density reaches its maximum at the stellar center and decreases monotonically toward the surface. Increasing the polytropic index results in a stronger concentration of mass near the core.
 ![Diagram](./figures/rho.png)
 
-Mass profile;
+Mass profile; The enclosed mass is calculated from $ \frac{dM}{dr}=4\pi r^2\rho(r).$ The enclosed mass increases continuously with radius because each spherical shell contributes additional matter. The slope gradually decreases near the stellar surface as the density approaches zero.
 ![Diagram](./figures/mass.png)
 
-Pressure profile;
+Pressure profile; The pressure follows the polytropic equation of state, $ P=K\rho^{1+\frac{1}{n}}. $ Pressure is largest at the center and decreases outward. It supplies the outward force necessary to balance gravitational collapse.
 ![Diagram](./figures/pressure.png)
 
-Pressure derivative $\frac{\partial P}{\partial r} (r)$;
+Pressure derivative $\frac{\partial P}{\partial r} (r)$; The pressure gradient is always negative because pressure decreases with increasing radius. According to hydrostatic equilibrium, $\frac{dP}{dr}=-\rho(r)g(r),$ the pressure gradient exactly balances the inward gravitational force.
 ![Diagram](./figures/pressurederivative.png)
 
-Absolute Value of Pressure derivative $|\frac{\partial P}{\partial r} (r)|$;
+Absolute Value of Pressure derivative $|\frac{\partial P}{\partial r} (r)|$; The magnitude of the pressure gradient is $\left|\frac{dP}{dr}\right|.$ It measures the strength of the supporting pressure force without regard to direction. It is largest near the stellar center where both pressure and density are highest and gradually decreases outward.
 ![Diagram](./figures/absolutepressurederivative.png)
 
-Gravitational field $g(r)$;
+Gravitational field $g(r)$; The gravitational acceleration is computed from $ g(r)=\frac{GM(r)}{r^2}.$ It is zero at the center because the enclosed mass vanishes there. The field increases with radius as enclosed mass accumulates, reaches a maximum, and may decrease toward the surface because of the inverse-square dependence.
 ![Diagram](./figures/gravitationalfield.png)
 
 Product $\rho(r) g(r)$;
 ![Diagram](./figures/productrhogravitationalfield.png)
+The quantity
+
+$$
+\frac{\dfrac{dP}{dr}}{\rho(r)g(r)}
+$$
+
+compares the pressure gradient with the gravitational force per unit volume.
+
+Hydrostatic equilibrium predicts
+
+$$
+\frac{dP}{dr}=-\rho(r)g(r),
+$$
+
+so this ratio should remain close to
+
+$$
+-1.
+$$
+
+Any deviation from this value is primarily due to numerical discretization errors and provides a measure of the numerical accuracy.
 
 Quantity $\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}$;
 ![Diagram](./figures/ratio.png)
@@ -260,12 +281,37 @@ We _assumed_ hydrostatic equilibrium, which is essentially a competition between
 To compare these forces, we take their ratios and study that (just like we define reynold's number for comparing inertial and viscous forces for understanding turbulence in flow). 
 We define $\beta(r) = \left|\frac{\frac{\partial P}{\partial r}}{\rho(r) g(r)}\right| + 1$. The $+ 1$ is considered for a specific reason, $\beta(r) = \rho(r) A(r)$ where $A$ is non-inertial acceleration of the frame. Thus, $\beta$ corresponds to the deviation parameter from the hydrostatic equilibrium where small $\beta$ means less deviation. 
 
+The parameter
+
+$$
+\beta(r)=\left|\frac{\dfrac{dP}{dr}}{\rho(r)g(r)}\right|+1
+$$
+
+is introduced as a measure of the deviation from hydrostatic equilibrium. When the pressure gradient exactly balances gravity,
+
+$$
+\beta(r)=2.
+$$
+
+If your intended equilibrium value is instead 1, define it as
+
+$$
+\beta(r)=\left|\frac{\dfrac{dP}{dr}}{\rho(r)g(r)}+1\right|,
+$$
+
+which satisfies
+
+$$
+\beta(r)=0
+$$
+
+for perfect hydrostatic equilibrium. (This latter definition is generally a more natural error measure.)
+
 $\beta$ parameter;
 ![Diagram](./figures/beta.png)
 
 The temperature profile can be obtained from a simple ideal gas equation $P\mu = \rho k_{b} T$. 
-
-Temperature profile;
+Temperature profile; Temperature is highest at the stellar center where both pressure and density attain their maximum values and decreases smoothly toward the stellar surface.
 ![Diagram](./figures/T.png)
 
 </details>
@@ -294,10 +340,10 @@ $\Phi( r + \mathrm{d}r ) - \Phi(r) = 4 \sigma T^3 \mathrm{d} T$
 Therefore, 
 $\frac{\mathrm{d} T}{\mathrm{d} r} = -\frac{C \rho(r) \Phi_{0}(r)}{4 \sigma T^3}$ we can further substitute $\Phi(r) = \frac{L(r)}{4 \pi r^2}$ to obtain the luminosity relation. 
 
-Flux profile;
+Flux profile; The radiative flux is estimated from the temperature gradient using the proposed extension of the Lane–Emden model. Regions possessing larger temperature gradients transport energy more efficiently, resulting in larger radiative flux.
 ![Diagram](./figures/flux.png)
 
-Luminosity profile;
+Luminosity profile; The luminosity represents the total energy transported through a spherical surface of radius (r). It is computed from the radiative flux and illustrates how energy transport varies throughout the stellar interior. In a realistic stellar model, luminosity generally increases outward as progressively larger amounts of energy generated within the interior pass through spherical shells of increasing radius.
 ![Diagram](./figures/L.png)
 
 The essence of combining these equations is that **_for star containing ideal gas, which has spherical symmetry, we can now find for any thermodynamic process (polytropic index $n$), we can find the quantities_** $\rho(r), M(r), P(r), g(r), β, T(r), L(r)$ **_provided the central density_** $\rho_{c}$  **_,the polytropic constant_** $K$ **_,the flux constant_** $C$ **_, and the mean molecular weight_** $\mu$.
