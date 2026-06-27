@@ -264,6 +264,7 @@ $\beta$ parameter;
 ![Diagram](./figures/beta.png)
 
 The temperature profile can be obtained from a simple ideal gas equation $P\mu = \rho k_{b} T$. 
+
 Temperature profile;
 ![Diagram](./figures/T.png)
 
