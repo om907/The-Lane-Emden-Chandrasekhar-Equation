@@ -247,7 +247,7 @@ Pressure derivative $\frac{\partial P}{\partial r} (r)$; The pressure gradient i
 Absolute Value of Pressure derivative $|\frac{\partial P}{\partial r} (r)|$; The magnitude of the pressure gradient is $\left|\frac{dP}{dr}\right|.$ It measures the strength of the supporting pressure force without regard to direction. It is largest near the stellar center where both pressure and density are highest and gradually decreases outward.
 ![Diagram](./figures/absolutepressurederivative.png)
 
-Gravitational field $g(r)$; The gravitational acceleration is computed from $ g(r)=\frac{GM(r)}{r^2}.$ It is zero at the center because the enclosed mass vanishes there. The field increases with radius as enclosed mass accumulates, reaches a maximum, and may decrease toward the surface because of the inverse-square dependence.
+Gravitational field $g(r)$; The gravitational acceleration is computed from $g(r)=\frac{GM(r)}{r^2}$. It is zero at the center because the enclosed mass vanishes there. The field increases with radius as enclosed mass accumulates, reaches a maximum, and may decrease toward the surface because of the inverse-square dependence.
 ![Diagram](./figures/gravitationalfield.png)
 
 Product $\rho(r) g(r)$;
